@@ -1,1 +1,1 @@
-# SoftUni---JS
+# SoftUni-JS
