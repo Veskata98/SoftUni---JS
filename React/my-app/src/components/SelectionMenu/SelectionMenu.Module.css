@@ -1,0 +1,13 @@
+.menu-items {
+  background-color: grey;
+  padding: 0;
+  margin: 0;
+  width: 25%;
+  text-align: center;
+  font-size: large;
+}
+
+.menu-items > li {
+  color: white;
+  padding: 15px;
+}

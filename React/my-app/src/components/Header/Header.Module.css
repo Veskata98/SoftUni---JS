@@ -1,0 +1,45 @@
+.navbar {
+  background-color: dimgrey;
+  display: block;
+  height: 45px;
+}
+
+.navbar-title {
+  color: white;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+.navbar-row {
+  max-width: 65%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: inherit;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.cart-img {
+  height: 35px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.cart {
+  display: flex;
+  align-items: center;
+}
+
+.login-register {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+a {
+  color: inherit;
+}

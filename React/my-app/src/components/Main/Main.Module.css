@@ -1,0 +1,22 @@
+.main {
+  background-color: ghostwhite;
+  background-image: url(../../images/background.png);
+  background-size: 100%;
+  flex: 1;
+}
+
+.selection-menu {
+  max-width: 65%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.selection-img {
+  max-height: 100%;
+  max-width: 100%;
+}

@@ -1,0 +1,17 @@
+{
+    "dependencies": {
+        "chai": "^4.3.6",
+        "mocha": "^10.0.0"
+    },
+    "name": "classes-exercises",
+    "version": "1.0.0",
+    "main": "stringBuilder.js",
+    "devDependencies": {},
+    "scripts": {
+        "test": "mocha ./*test.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": ""
+}
