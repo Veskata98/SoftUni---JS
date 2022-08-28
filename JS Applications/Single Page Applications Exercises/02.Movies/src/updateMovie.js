@@ -1,5 +1,5 @@
 import { renderDetails } from './details.js';
-import { showSection, updateNav } from './utils.js';
+import { getFormData, showSection } from './utils.js';
 
 const section = document.getElementById('edit-movie');
 const form = section.querySelector('form');
@@ -21,11 +21,13 @@ form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const token = JSON.parse(localStorage.getItem('user')).accessToken;
 
-    const formData = new FormData(form);
+    // const formData = new FormData(form);
 
-    const title = formData.get('title');
-    const description = formData.get('description');
-    const img = formData.get('imageUrl');
+    // const title = formData.get('title');
+    // const description = formData.get('description');
+    // const img = formData.get('imageUrl');
+
+    const [title, description, img] = getFormData(form, ['title', 'description', 'imageUrl']);
 
     if (title != '' && description != '' && img != '') {
         await fetch(`http://localhost:3030/data/movies/${id}`, {

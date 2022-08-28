@@ -1,0 +1,20 @@
+{
+    "name": "client-side-rendering---exercise",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha tests",
+        "start": "http-server -a localhost -p 3000 -P http://localhost:3000? -c-1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "chai": "^4.3.6",
+        "http-server": "^14.1.1",
+        "lit-html": "^2.3.1",
+        "mocha": "^10.0.0",
+        "playwright-chromium": "^1.25.1"
+    }
+}

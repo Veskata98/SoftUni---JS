@@ -28,3 +28,8 @@ export function updateNav() {
         addMovieBtn.classList.add('hidden');
     }
 }
+
+export const getFormData = (form, [...fields]) => {
+    const formData = new FormData(form);
+    return [...fields.map((x) => formData.get(x))];
+};

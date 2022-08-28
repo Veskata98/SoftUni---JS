@@ -1,45 +1,34 @@
 const { chromium } = require('playwright-chromium');
 const { expect } = require('chai');
 
-const host = 'http://localhost:' + 3030; // Application host (NOT service host - that can be anything)
-
+const host = 'http://localhost:3000'; // Application host (NOT service host - that can be anything)
 const interval = 300;
 const DEBUG = false;
 const slowMo = 500;
 
+
 const mockData = {
-    list: [
+    "catalog": [
         {
-            _id: '1287',
-            buses: { 76: 15, 84: 10, 204: 10, 213: 18, 280: 9, 306: 31, 604: 11 },
-            name: 'Orlov Most sq.',
+            "text": "Rome",
+            "_id": "1001"
         },
         {
-            _id: '1308',
-            buses: { 4: 13, 12: 6, 18: 7 },
-            name: 'St. Nedelya sq.',
+            "text": "Amsterdam",
+            "_id": "1002"
         },
-        {
-            _id: '1327',
-            buses: { 78: 18, 85: 20, 213: 18, 285: 20, 305: 18, 404: 18, 413: 16 },
-            name: 'Central Train Station sq.',
-        },
-        {
-            _id: '2334',
-            buses: { 20: 11, 22: 4 },
-            name: 'Centralni Hali',
-        },
-    ],
+    ]
 };
 
 const endpoints = {
-    catalog: (id) => `/jsonstore/bus/businfo/${id}`,
+    catalog: '/jsonstore/advanced/dropdown'
 };
 
 let browser;
 let page;
 
 describe('E2E tests', function () {
+    // Setup
     this.timeout(6000);
 
     before(async () => {
@@ -55,95 +44,72 @@ describe('E2E tests', function () {
         await page.close();
     });
 
-    describe('List', () => {
-        it('Show bus stop name', async () => {
-            await page.goto(host);
-            const data = mockData.list[3];
-            const { get } = await handle(endpoints.catalog(data._id));
+    describe('Catalog', () => {
+
+        it('Show catalog', async () => {
+            const data = mockData.catalog;
+            const { get } = await handle(endpoints.catalog);
             get(data);
+            await page.goto(host);
             await page.waitForTimeout(interval);
 
-            await page.fill('[type="text"]', data._id);
-            await page.click('[type="button"]');
-
+            await page.click('#menu');
+            const city = await page.$$eval(`#menu option`, t => t.map(s => s.textContent));
             await page.waitForTimeout(interval);
 
-            const search = await page.$$eval(`#stopName`, (t) => t.map((s) => s.textContent));
-            await page.waitForTimeout(interval);
-            expect(search[0]).to.contains(data.name);
-            done();
+            expect(city.length).to.equal(data.length);
         });
 
-        it('Match bus stops length', async () => {
-            await page.goto(host);
-            const data = mockData.list[3];
-            const { get } = await handle(endpoints.catalog(data._id));
+        it('Check catalog value', async () => {
+            const data = mockData.catalog;
+            const { get } = await handle(endpoints.catalog);
             get(data);
+            await page.goto(host);
             await page.waitForTimeout(interval);
 
-            await page.fill('[type="text"]', data._id);
-            await page.click('[type="button"]');
-
+            await page.click('#menu');
+            const city = await page.$$eval(`#menu option`, t => t.map(s => s.value));
             await page.waitForTimeout(interval);
 
-            const stops = await page.$$eval(`#buses li`, (t) => t.map((s) => s.textContent));
-            await page.waitForTimeout(interval);
-
-            expect(stops.length).to.equal(2);
+            expect(city[0]).to.equal(data[0]._id);
+            expect(city[1]).to.equal(data[1]._id);
         });
 
-        it('Match bus stops length with wrong ID', async () => {
+        it('Add town to catalog API call', async () => {
+            const town = mockData.catalog[0];
+
+            const { post } = await handle(endpoints.catalog);
+            const isCalled = post().isHandled;
+
             await page.goto(host);
-            const data = mockData.list[0];
-            const { get } = await handle(endpoints.catalog(data._id));
-            get(data);
             await page.waitForTimeout(interval);
 
-            await page.fill('[type="text"]', '1000');
-            await page.click('[type="button"]');
+            await page.fill('#itemText', town.text);
+
+            page.click('[type="submit"]');
 
             await page.waitForTimeout(interval);
 
-            const stops = await page.$$eval(`#buses li`, (t) => t.map((s) => s.textContent));
-            await page.waitForTimeout(interval);
+            expect(isCalled()).to.be.false;
 
-            expect(stops.length).to.equal(0);
         });
 
-        it('Show error with wrong ID', async () => {
-            await page.goto(host);
-            const data = mockData.list[0];
-            const { get } = await handle(endpoints.catalog(data._id));
-            get(data);
-            await page.waitForTimeout(interval);
-
-            await page.fill('[type="text"]', '1000');
-            await page.click('[type="button"]');
-
-            await page.waitForTimeout(interval);
-
-            const search = await page.$$eval(`#stopName`, (t) => t.map((s) => s.textContent));
-
-            await page.waitForTimeout(interval);
-            expect(search[0]).to.contains('Error');
-        });
     });
+
 });
 
 async function setupContext(context) {
+
     // Catalog and Details
-    await handleContext(context, endpoints.catalog, { get: mockData.list });
+    await handleContext(context, endpoints.catalog, { get: mockData.catalog });
 
     // Block external calls
-    await context.route(
-        (url) => url.href.slice(0, host.length) != host,
-        (route) => {
-            if (DEBUG) {
-                console.log('Preventing external call to ' + route.request().url());
-            }
-            route.abort();
+    await context.route(url => url.href.slice(0, host.length) != host, route => {
+        if (DEBUG) {
+            console.log('Preventing external call to ' + route.request().url());
         }
-    );
+        route.abort();
+    });
 }
 
 function handle(match, handlers) {
@@ -163,7 +129,7 @@ async function handleRaw(match, handlers) {
         put: (returns, options) => request('PUT', returns, options),
         patch: (returns, options) => request('PATCH', returns, options),
         del: (returns, options) => request('DELETE', returns, options),
-        delete: (returns, options) => request('DELETE', returns, options),
+        delete: (returns, options) => request('DELETE', returns, options)
     };
 
     const context = this;
@@ -215,19 +181,16 @@ async function handleRaw(match, handlers) {
             return current.url().toLowerCase().includes(match.toLowerCase());
         }
     }
-}
+};
 
 function respond(data, options = {}) {
-    options = Object.assign(
-        {
-            json: true,
-            status: 200,
-        },
-        options
-    );
+    options = Object.assign({
+        json: true,
+        status: 200
+    }, options);
 
     const headers = {
-        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Origin': '*'
     };
     if (options.json) {
         headers['Content-Type'] = 'application/json';
@@ -237,6 +200,6 @@ function respond(data, options = {}) {
     return {
         status: options.status,
         headers,
-        body: data,
+        body: data
     };
 }

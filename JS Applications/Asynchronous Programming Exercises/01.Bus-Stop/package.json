@@ -1,0 +1,22 @@
+{
+    "name": "01.bus-stop",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "directories": {
+        "test": "tests"
+    },
+    "scripts": {
+        "test": "mocha"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "playwright-chromium": "^1.25.0"
+    },
+    "dependencies": {
+        "chai": "^4.3.6",
+        "mocha": "^10.0.0"
+    }
+}
