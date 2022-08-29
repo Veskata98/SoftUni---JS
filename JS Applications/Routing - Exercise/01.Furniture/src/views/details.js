@@ -1,6 +1,6 @@
 import { html, render } from '../../node_modules/lit-html/lit-html.js';
 import { getItem } from '../api/data.js';
-import { loading, mainElement } from '../utils.js';
+import { loading, mainElement, updateNav } from '../utils.js';
 
 let userId = null;
 
@@ -64,8 +64,11 @@ export const showDetails = async (ctx) => {
 
     if (user) {
         userId = JSON.parse(user)._id;
+    } else {
+        userId = null;
     }
 
+    updateNav();
     const item = await getItem(ctx.params.id);
     render(detailTemplate(item, userId), mainElement());
 };

@@ -2,7 +2,7 @@ import page from '../../node_modules/page/page.mjs';
 
 import { html, render } from '../../node_modules/lit-html/lit-html.js';
 import { editItem, getItem } from '../api/data.js';
-import { mainElement, updateNav } from '../utils.js';
+import { mainElement, updateNav, inputCheck } from '../utils.js';
 
 let itemId = null;
 
@@ -79,28 +79,12 @@ export const editFurniture = async (ctx) => {
 
 const editHandler = async (e) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
 
-    const make = formData.get('make');
-    const model = formData.get('model');
-    const year = formData.get('year');
-    const description = formData.get('description');
-    const price = formData.get('price');
-    const img = formData.get('img');
-    const material = formData.get('material');
+    const data = inputCheck(form);
 
-    if (
-        make.trim().length > 4 &&
-        model.trim().length > 4 &&
-        Number(year) > 1950 &&
-        Number(year) < 2050 &&
-        description.trim().length > 10 &&
-        Number(price) >= 0 &&
-        img
-    ) {
-        await editItem(itemId, { make, model, year, description, price, img, material });
+    if (data) {
+        await editItem(itemId, data);
         page.redirect('/');
-    } else {
-        alert('Please correct your information!');
     }
 };

@@ -50,3 +50,70 @@ export const loading = () =>
             </div>
         </div>
     `;
+
+export const inputCheck = (form) => {
+    let flag = false;
+
+    const formData = new FormData(form);
+
+    const make = formData.get('make');
+    const model = formData.get('model');
+    const year = formData.get('year');
+    const description = formData.get('description');
+    const price = formData.get('price');
+    const img = formData.get('img');
+    const material = formData.get('material');
+
+    const makeElement = form.querySelector('#new-make');
+    const modelElement = form.querySelector('#new-model');
+    const yearElement = form.querySelector('#new-year');
+    const descriptionElement = form.querySelector('#new-description');
+    const priceElement = form.querySelector('#new-price');
+    const imgElement = form.querySelector('#new-image');
+
+    if (make.trim().length > 4) {
+        makeElement.classList = 'form-control is-valid';
+    } else {
+        makeElement.classList = 'form-control is-invalid';
+        flag = true;
+    }
+
+    if (model.trim().length > 4) {
+        modelElement.classList = 'form-control is-valid';
+    } else {
+        modelElement.classList = 'form-control is-invalid';
+        flag = true;
+    }
+
+    if (Number(year) > 1950 && Number(year) < 2050) {
+        yearElement.classList = 'form-control is-valid';
+    } else {
+        yearElement.classList = 'form-control is-invalid';
+        flag = true;
+    }
+
+    if (description.trim().length > 10) {
+        descriptionElement.classList = 'form-control is-valid';
+    } else {
+        descriptionElement.classList = 'form-control is-invalid';
+        flag = true;
+    }
+
+    if (Number(price) > 0) {
+        priceElement.classList = 'form-control is-valid';
+    } else {
+        priceElement.classList = 'form-control is-invalid';
+        flag = true;
+    }
+
+    if (img) {
+        imgElement.classList = 'form-control is-valid';
+    } else {
+        imgElement.classList = 'form-control is-invalid';
+        flag = true;
+    }
+
+    if (!flag) {
+        return { make, model, year, description, price, img, material };
+    }
+};

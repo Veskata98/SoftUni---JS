@@ -2,7 +2,7 @@ import page from '../../node_modules/page/page.mjs';
 
 import { html, render } from '../../node_modules/lit-html/lit-html.js';
 import { createItem } from '../api/data.js';
-import { mainElement, updateNav } from '../utils.js';
+import { mainElement, updateNav, inputCheck } from '../utils.js';
 
 const createTemplate = () => html`
     <div class="container">
@@ -17,7 +17,7 @@ const createTemplate = () => html`
                 <div class="col-md-4">
                     <div class="form-group">
                         <label class="form-control-label" for="new-make">Make</label>
-                        <input class="form-control valid" id="new-make" type="text" name="make" />
+                        <input class="form-control" id="new-make" type="text" name="make" />
                     </div>
                     <div class="form-group has-success">
                         <label class="form-control-label" for="new-model">Model</label>
@@ -60,28 +60,12 @@ export const showCreate = () => {
 
 const createHandler = async (e) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
 
-    const make = formData.get('make');
-    const model = formData.get('model');
-    const year = formData.get('year');
-    const description = formData.get('description');
-    const price = formData.get('price');
-    const img = formData.get('img');
-    const material = formData.get('material');
+    const data = inputCheck(form);
 
-    if (
-        make.trim().length > 4 &&
-        model.trim().length > 4 &&
-        Number(year) > 1950 &&
-        Number(year) < 2050 &&
-        description.trim().length > 10 &&
-        Number(price) >= 0 &&
-        img
-    ) {
-        await createItem({ make, model, year, description, price, img, material });
+    if (data) {
+        await createItem(data);
         page.redirect('/');
-    } else {
-        alert('Please correct your information!');
     }
 };
