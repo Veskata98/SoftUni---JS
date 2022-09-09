@@ -1,0 +1,46 @@
+body {
+    background-color: #b7d7e8;
+}
+
+header {
+   background-color: #dceaf4; 
+}
+
+header > h1, nav{
+    display: inline-block;
+    margin: 0;
+    padding: 0px 15px;
+    vertical-align: middle;
+}
+
+ul {
+    padding-left: 0px;
+}
+
+ul > li {
+    list-style: none;
+    display: inline-block;
+    margin: 0px 20px;
+    font-size: 24px;
+}
+
+ul > li > a {
+    text-decoration: none;
+}
+
+article {
+    display: table-cell;
+    background-color: #dceaf4 ;
+    width: 50%;
+    padding: 10px 15px;
+    border: 10px solid #b7d7e8;
+}
+
+footer {
+    background-color: #dceaf4;
+}
+
+footer > p {
+    padding: 5px 15px;
+    margin: 0;
+}

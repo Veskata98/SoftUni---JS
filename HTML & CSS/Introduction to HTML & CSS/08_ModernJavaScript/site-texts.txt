@@ -1,0 +1,8 @@
+The Modern JavaScript Tutorial
+
+The JavaScript language 1.0
+
+The JavaScript language 1.0 An introduction
+We concentrate on the language itself here, with the minimum of environment-specific notes.
+
+�2007�2021 All rights reserved.
