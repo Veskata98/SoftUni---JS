@@ -1,0 +1,96 @@
+body {
+    padding: 20px 30px;
+    background-color: rgb(238, 238, 238);
+}
+
+.site-title {
+    display: inline;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    margin: 0;
+}
+
+header nav {
+    display: inline-block;
+    float: right;
+}
+
+ul.nav-list li {
+    list-style: none;
+    display: inline-block;
+}
+
+ul.nav-list li a {
+    text-decoration: none;
+    color: rgb(0, 102, 0);
+    padding: 10px;
+}
+
+hr {
+    width: 100%;
+}
+
+
+main article header img {
+    float: right;
+    border: 2px solid black;
+    padding: 5px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 70% auto;
+    gap: 40px;
+    grid-template-areas:
+        "article aside";
+}
+
+article {
+    grid-area: article;
+}
+
+aside {
+    grid-area: aside;
+}
+
+.block-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.block-grid p {
+    margin: 0;
+    padding-right: 20px;
+}
+
+blockquote {
+    position: relative;
+    font-family: Georgia, serif;
+    border-left: 3px solid lightgray;
+    padding: 0;
+    padding-left: 20px;
+    margin: 0;
+    font-style: italic;
+}
+
+blockquote p {
+    position: absolute;
+    bottom: 38px;
+    right: 0px;
+}
+
+main article section img {
+    float: left;
+    border: 2px solid black;
+    padding: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+aside nav ul li a {
+    text-decoration: none;
+    color: rgb(0, 102, 0);
+}

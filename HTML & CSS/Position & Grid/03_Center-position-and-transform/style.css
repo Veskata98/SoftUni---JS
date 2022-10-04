@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    background-color: rgb(238, 238, 238);
+}
+
+.card {
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 18px 1px rgba(0, 0, 0, 0.55);
+    -webkit-box-shadow: 0px 0px 18px 1px rgba(0, 0, 0, 0.55);
+    -moz-box-shadow: 0px 0px 18px 1px rgba(0, 0, 0, 0.55);
+}
+
+.card .img {
+    height: 260px;
+}
+
+.card .img img {
+    position: absolute;
+    height: 260px;
+}
+
+.card h3 {
+    font-family: Georgia, serif;
+    font-size: 1em/1.2;
+    margin: 0;
+}
+
+.card .img img {
+    width: 100%;
+}
+
+.card .text {
+    padding: 20px 30px;
+    margin-bottom: 30px;
+}
+
+.card .text p {
+    margin-bottom: 25px;
+}
+
+.card .text a {
+    text-decoration: none;
+    color: #fff;
+    background-color: rgb(0, 153, 0);
+    padding: 5px 10px;
+    float: right;
+}

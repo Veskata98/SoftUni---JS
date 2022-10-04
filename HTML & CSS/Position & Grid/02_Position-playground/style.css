@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+}
+
+.viewport {
+    height: 50vh;
+    position: relative;
+}
+
+.first {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(20, 169, 199, 1) 0%, rgba(10, 154, 105, 1) 100%);
+}
+
+.second {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(180, 43, 115, 1) 0%, rgba(210, 114, 15, 1) 100%);
+}
+
+section.card {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+img {
+    width: 200px;
+}
+
+i {
+    color: #fff;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translate(-25%, -50%);
+}

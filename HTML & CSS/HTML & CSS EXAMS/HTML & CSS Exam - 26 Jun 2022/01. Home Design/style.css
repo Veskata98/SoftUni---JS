@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+body {
+    font-family: 'Courgette', cursive;
+    background-color: #f5f5f5;
+
+}
+
+.section {
+    text-align: center;
+    margin: 4rem auto;
+    width: 1200px;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 100;
+    margin-bottom: 3.5rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: "+DESIGN";
+
+    position: absolute;
+    top: 4rem;
+    left: 55%;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #c91e23;
+}
+
+.articles-container {
+    display: flex;
+    gap: 1.5rem;
+    text-align: center;
+    justify-content: center;
+}
+
+.article {
+    width: 33.33%;
+    background-color: #ffffff;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.article-img {
+    height: 210px;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.article-title {
+    font-size: 1.5rem;
+    position: relative;
+    margin-bottom: 1.5rem;
+    padding: 0 0.5rem;
+}
+
+.article-title::after {
+    content: "";
+    height: 1px;
+    width: 90%;
+    background-color: #c91e23;
+    position: absolute;
+    left: 5%;
+    bottom: -0.75rem;
+}
+
+.article-text {
+    padding: 0 0.5rem;
+}
+
+.article-info {
+    height: 175px;
+}
+
+.article-link-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 1rem;
+}
+
+.article-continue-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.article-continue-link-text {
+    color: black;
+}
+
+.arrow-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 0.8rem;
+    color: #ffffff;
+    background-color: #c91e23;
+    width: 1.2rem;
+    height: 1.2rem;
+
+    border-radius: 100%;
+}

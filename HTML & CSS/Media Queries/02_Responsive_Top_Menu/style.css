@@ -1,0 +1,89 @@
+header,
+aside,
+main,
+footer {
+    background-color: rgb(181, 216, 255);
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+header h1 {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+header nav {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 8px;
+}
+
+.nav-list li {
+    list-style: none;
+    display: inline;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: rgb(53, 100, 153);
+    padding: 5px 15px;
+}
+
+ul.aside-list {
+    list-style: none;
+    padding: 5px;
+    margin: 0px;
+}
+
+ul.aside-list li a {
+    display: block;
+    padding: 5px 0px;
+    text-decoration: none;
+    color: rgb(86, 40, 129);
+}
+
+body {
+    display: grid;
+    grid-template-columns: 100px auto;
+    gap: 10px;
+    grid-template-areas:
+        "header header"
+        "aside main"
+        "footer footer";
+}
+
+header {
+    grid-area: header;
+}
+
+aside {
+    grid-area: aside;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer
+}
+
+@media screen and (max-width: 500px) {
+    body {
+        grid-template-areas:
+            "header header"
+            "aside aside"
+            "main main"
+            "footer footer";
+    }
+
+    .nav-list a {
+        display: block;
+        padding-left: 5px;
+    }
+
+    .nav-list {
+        margin: 0px;
+        padding: 0px;
+    }
+}

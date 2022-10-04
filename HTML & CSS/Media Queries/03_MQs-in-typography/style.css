@@ -1,0 +1,160 @@
+body {
+    margin: 0;
+    background-color: rgb(238, 238, 238);
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+
+    margin: auto;
+    width: 80%;
+    padding: 30px 0px;
+}
+
+.page>header {
+    border-bottom: 2px solid black;
+}
+
+.page header>h1 {
+    font-family: Georgia, serif;
+    font-size: 25px;
+}
+
+main article header img {
+    float: right;
+    border: 2px solid black;
+    padding: 5px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+main article section img {
+    float: left;
+    border: 2px solid black;
+    padding: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.blockquote {
+    display: flex;
+}
+
+
+.blockquote p {
+    flex: 1 1 55%;
+}
+
+.blockquote blockquote p {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.blockquote blockquote {
+    flex: 1 1 45%;
+    font-style: italic;
+    border-left: 2px solid lightgray;
+    padding-left: 20px;
+    font-family: Georgia, serif;
+}
+
+
+img {
+    background-color: rgb(255, 255, 255);
+}
+
+
+@media screen and (min-width: 1800px) {
+
+    p,
+    blockquote {
+        font-size: 23px;
+    }
+}
+
+@media screen and (max-width: 1800px) {
+
+    p,
+    blockquote {
+        font-size: 21px;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+
+    p,
+    blockquote {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    p,
+    blockquote {
+        font-size: 16px;
+    }
+
+    .page {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    p,
+    blockquote {
+        font-size: 14px;
+    }
+
+    .blockquote p {
+        flex: 1 1 50%;
+    }
+
+    .blockquote blockquote {
+        flex: 1 1 50%;
+    }
+
+    .page {
+        width: 90%;
+    }
+}
+
+/* Phone screen */
+@media screen and (max-width: 500px) {
+
+    p,
+    blockquote {
+        font-size: 12px;
+    }
+
+    .heading-img {
+        float: none;
+    }
+
+    .blockquote p {
+        margin-bottom: 20px;
+    }
+
+    .blockquote {
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    .blockquote blockquote {
+        width: 80%;
+        margin: auto;
+    }
+
+    ;
+
+    .second-heading {
+        margin-bottom: 10px;
+    }
+
+    .footer-img {
+        float: none;
+    }
+}

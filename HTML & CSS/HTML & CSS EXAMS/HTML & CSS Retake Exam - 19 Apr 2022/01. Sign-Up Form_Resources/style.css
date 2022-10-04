@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body {
+    background-color: #e9e9e9;
+    font-family: 'Open Sans', sans-serif;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register {
+    width: 900px;
+    height: 520px;
+    display: flex;
+}
+
+.register-info {
+    width: 450px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('./image/cover.jpg');
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fff;
+    padding: 2rem 2.5rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.register-brand {
+    font-weight: bold;
+}
+
+.register-titles {
+    text-align: center;
+}
+
+.register-title {
+    font-size: 2.2rem;
+    font-weight: 100;
+}
+
+.register-subtitle {
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+
+.register-icons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.register-icons a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/* Right side */
+
+.register-content {
+    width: 450px;
+    background-color: #fafafa;
+    padding: 3rem;
+}
+
+.register-form label,
+.register-form input {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.register-form label {
+    text-transform: uppercase;
+    color: lightgrey;
+}
+
+.register-form input {
+    border: none;
+    border-bottom: 1px solid lightgrey;
+}
+
+.register-form input:last-of-type {
+    margin-bottom: 4rem;
+}
+
+.register-btn {
+    color: #fff;
+    background-color: #000;
+    padding: 0.4rem 1rem;
+    border-radius: 1rem;
+    width: 50%;
+    text-transform: uppercase;
+    margin-right: 1rem;
+}
+
+.login-link {
+    color: rgb(170, 170, 170);
+}

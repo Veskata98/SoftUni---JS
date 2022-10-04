@@ -1,0 +1,44 @@
+ul {
+    list-style: none;
+}
+
+ul li {
+    margin: 5px;
+    display: inline-block;
+}
+
+ul li a {
+    padding: 10px;
+    background-color: #eee;
+    color: black;
+    border-radius: 50%;
+    margin: 5px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+ul li:nth-child(1):hover {
+    color: rgb(57, 57, 221);
+}
+
+ul li:nth-child(2):hover {
+    color: rgb(29, 223, 223);
+}
+
+ul li:nth-child(3):hover {
+    color: rgb(216, 32, 32);
+}
+
+ul li:nth-child(4):hover {
+    color: rgb(28, 171, 207);
+}
+
+ul li:nth-child(5):hover {
+    color: rgb(57, 57, 221);
+}
+
+ul li a {
+    color: inherit;
+}

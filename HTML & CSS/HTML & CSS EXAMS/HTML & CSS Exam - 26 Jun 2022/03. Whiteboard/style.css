@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+
+body {
+    font-family: 'PT Sans', sans-serif;
+}
+
+.hero {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%), url('./image/computer-main.jpg');
+    height: 760px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin: 0 auto;
+    padding-top: 3rem;
+    margin-bottom: 5rem;
+}
+
+.header a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    color: #fff;
+    text-shadow: -2px 2px 2px #000000;
+    text-decoration: none;
+}
+
+.hero-info {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: -2px 2px 2px #000000;
+    margin-bottom: 2rem;
+}
+
+.hero-text {
+    font-size: 2rem;
+    color: #fff;
+    text-shadow: -2px 2px 2px #000000;
+    margin-bottom: 5.5rem;
+}
+
+.hero-btn {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #01d08e;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.25rem;
+    margin-bottom: 5.5rem;
+    cursor: pointer;
+}
+
+.hero-link {
+    font-size: 1.5rem;
+    color: #fff;
+    text-shadow: -2px 2px 2px #000000;
+    text-decoration: none;
+}
+
+.benefits {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.benefits>* {
+    height: 550px;
+}
+
+.benefit-info {
+    padding: 2rem 4rem;
+}
+
+.benefit-title {
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+.benefit-descr {
+    font-size: 1.75rem;
+}
+
+.benefit-list {
+    padding-left: 0;
+}
+
+.benefit-item {
+    list-style: none;
+    padding: 1rem 1.5rem;
+    padding-left: 0;
+    font-size: 1.2rem;
+}
+
+.benefit-item i {
+    color: #01d08e;
+    font-size: 1rem;
+    margin-right: 1rem;
+}
+
+.benefit-tablet-img,
+.benefit-pen-img {
+    width: 100%;
+}
+
+.benefit-pins {
+    padding: 2rem;
+}
+
+.benefit-pins-title {
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+
+.benefit-pins-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.benefit-pin {
+    margin: 0 auto;
+}
+
+.benefit-pin-img {
+    width: 6rem;
+    margin: 0 auto;
+    margin-bottom: 0.5rem;
+}
+
+.benefit-pin-title {
+    color: #01d08e;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.faq {
+    height: 650px;
+    width: 90%;
+    margin: 0 auto;
+    background-color: #b2f1dd;
+    text-align: center;
+}
+
+.faq-title {
+    font-size: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+}
+
+.faq-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem 7rem;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 4rem;
+}
+
+.faq-item-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.faq-item-text {
+    font-size: 1.2rem;
+}
+
+.faq-contact {
+    font-size: 1.2rem;
+}

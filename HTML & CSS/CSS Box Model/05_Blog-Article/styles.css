@@ -1,0 +1,37 @@
+body {
+    background-color: #02475e;
+}
+
+article h2 {
+    font-size: 36px;
+    color: #fefecc;
+    margin: 12px;
+    text-align: center;
+}
+
+article div {
+    border-top: 2px solid #fff;
+    position: relative;
+    top: 20px;
+    margin-bottom: 30px;
+}
+
+article div span {
+    background-color: #fff;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 120px;
+    font-size: 14px;
+    padding: 3px 5px;
+    position: relative;
+    top: -11px;
+}
+
+article p {
+    color: #eee;
+    text-indent: 30px;
+    padding: 10px;
+    line-height: 24px;
+    font-family: Arial, sans-serif;
+}

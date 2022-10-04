@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --clr--black: #000;
+    --clr--white: #fff;
+    --clr--bg: #f8f8f8;
+    --clr--border: #a2a2a2;
+    --clr--input-border: #e0e0e0;
+}
+
+section {
+    position: relative;
+    width: 300px;
+    max-width: 90%;
+
+    background-color: var(--clr--bg);
+    border: 2px solid var(--clr--border);
+
+    margin: 0px auto;
+    margin-top: 60px;
+}
+
+legend {
+    position: absolute;
+    top: -15px;
+    left: -2px;
+    border: 1px solid var(--clr--border);
+    width: 35%;
+    z-index: 1;
+    background-color: var(--clr--bg);
+}
+
+legend p {
+    margin: 5px;
+    font-weight: 600;
+}
+
+.submit-fieldset {
+    padding: 26px 18px;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.submit-fieldset p {
+    margin: 0;
+    padding: 0;
+}
+
+.submit-field {
+    display: flex;
+    align-items: center;
+    position: relative;
+    column-gap: 10px;
+}
+
+.submit-field label {
+    flex-basis: 20%;
+}
+
+.submit-field input {
+    line-height: 1.6;
+    flex-basis: 80%;
+    padding-left: 20px;
+    border: 1px solid var(--clr--input-border);
+}
+
+i {
+    position: absolute;
+    top: 4px;
+    left: 74px;
+}
+
+.submit-btns button {
+    padding: 5px 12px;
+    border: none;
+    background-color: var(--clr--black);
+    color: var(--clr--bg);
+    border-radius: 4px;
+}
+
+@media screen and (max-width: 768px) {
+
+    section {
+        width: 400px;
+    }
+
+    .submit-field {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .submit-fieldset :nth-child(2) {
+        margin-bottom: 10px;
+    }
+
+    .submit-field label,
+    .submit-field input {
+        width: 100%;
+        line-height: 1.8;
+    }
+
+    i {
+        top: 27px;
+        left: 5px;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+
+    section {
+        width: 95%;
+    }
+
+    .submit-field {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .submit-fieldset :nth-child(2) {
+        margin-bottom: 10px;
+    }
+
+    .submit-field label,
+    .submit-field input {
+        width: 100%;
+        line-height: 2;
+    }
+
+    i {
+        top: 31px;
+        left: 5px;
+    }
+
+}

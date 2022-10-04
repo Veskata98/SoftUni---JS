@@ -1,0 +1,73 @@
+@media all and (max-width:600px) {
+    * {
+        box-sizing: border-box;
+    }
+
+    body,
+    main {
+        margin: 0;
+        width: 100%;
+    }
+
+    .left-to-right:first-child {
+        padding: 0;
+        padding-top: 3.75rem;
+        height: 630px
+    }
+
+    .left-to-right:first-child article {
+        padding: 2rem;
+        border-radius: 25%;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    main section.left-to-right:first-child article button,
+    main section.left-to-right:nth-child(3) article button,
+    main section:nth-child(2) article button {
+        display: none;
+    }
+
+    .left-to-right:first-child article header h1,
+    main section:nth-child(2) article header h1,
+    main section:nth-child(3) article header h1 {
+        font-size: 2rem;
+    }
+
+    main section:nth-child(2),
+    main section:nth-child(4) {
+        display: block;
+        width: 80%;
+    }
+
+    main section:nth-child(2) article img {
+        width: 500px;
+    }
+
+    main section.left-to-right:nth-child(3) {
+        padding: 0;
+    }
+
+    main section.left-to-right:nth-child(3) article {
+        border-radius: 25%;
+        width: 80%;
+        height: 450px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+    }
+
+    main section:nth-child(4) article form {
+        width: 100%;
+    }
+
+    main section:nth-child(4) article,
+    main section:nth-child(4) article img {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    main section:nth-child(4) form input,
+    main section:nth-child(4) form textarea {
+        width: 100%;
+    }
+}
