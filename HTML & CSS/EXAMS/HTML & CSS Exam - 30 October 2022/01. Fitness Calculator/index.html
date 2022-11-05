@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Fitness Calculator</title>
+</head>
+
+<body>
+    <section class="section">
+        <div class="image-container">
+            <img src="./image/calculator.png" alt="Fitness Calculator" class="image">
+        </div>
+        <form class="form" action="#">
+            <h1 class="title">FITNESS CALCULATOR</h1>
+            <div class="bnts-container">
+                <button class="normal-btn green-btn">Standart units (US)</button>
+                <button class="normal-btn">Metric units</button>
+            </div>
+            <h3 class="form-gender">Gender</h3>
+            <div class="gender-container">
+                <select class="gender-select" name="" id="">
+                    <option value="">Female</option>
+                    <option value="">Male</option>
+                    <option value="">Other</option>
+                </select>
+                <input class="gender-age" type="text" placeholder="Years...">
+            </div>
+            <h3 class="form-weight">Weight</h3>
+            <input class="form-weight-input" type="text" name="" id="" placeholder="Pounds...">
+            <h3 class="form-weight">Height</h3>
+            <div class="height-container">
+                <input type="text" placeholder="Feet...">
+                <input type="text" placeholder="Inches...">
+            </div>
+            <button class="bnt-submit">Calculate</button>
+        </form>
+    </section>
+</body>
+
+</html>

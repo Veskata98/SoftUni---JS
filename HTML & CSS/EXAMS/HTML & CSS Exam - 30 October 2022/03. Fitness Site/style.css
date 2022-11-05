@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif');
+
+body {
+    font-family: 'PT Sans', sans-serif;
+}
+
+.header {
+    background-color: #d01919;
+    color: #fff;
+    font-size: 20px;
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+
+.icons {
+    display: flex;
+    gap: 10px;
+}
+
+.icon a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.home {
+    width: 100%;
+    background-image: url('image/fitness-main.jpg');
+    height: 800px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.home-nav {
+    display: flex;
+    justify-content: flex-end;
+    width: 95%;
+    margin-bottom: 200px;
+}
+
+.home-list {
+    display: flex;
+    gap: 60px;
+    padding-top: 20px;
+}
+
+.home-item a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.home-box {
+    color: #fff;
+    text-align: center;
+}
+
+.home-box h1 {
+    font-size: 60px;
+    letter-spacing: 10px;
+    margin-bottom: 40px;
+}
+
+.home-box p {
+    font-size: 20px;
+    width: 600px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.home-box button {
+    color: #fff;
+    padding: 5px 15px;
+    background-color: #d01919;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+}
+
+.perks {
+    height: 400px;
+    text-align: center;
+}
+
+.perks h2 {
+    font-size: 40px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.perks h2::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 3%;
+    left: 48.5%;
+    bottom: 0;
+    background-color: #d01919;
+}
+
+.perks-container {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    gap: 30px;
+}
+
+.perk {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.perk img {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+.perk h3 {
+    color: rgb(226, 30, 30);
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.perk p {
+    width: 300px;
+    font-size: 18px;
+    color: rgb(36, 36, 36);
+}
+
+.coaches {
+    height: 575px;
+    text-align: center;
+    background-color: #efefef;
+}
+
+.coaches-container {
+    display: flex;
+    width: 85%;
+    margin: auto;
+    gap: 30px;
+}
+
+.coaches h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+    padding-top: 20px;
+    position: relative;
+    padding: 20px;
+}
+
+.coaches h2::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 3%;
+    left: 48.5%;
+    bottom: 0;
+    background-color: #d01919;
+}
+
+.coach {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.coach img {
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.coach h3 {
+    font-size: 20px;
+}
+
+.coach h4 {
+    margin-top: 0;
+    color: rgb(226, 30, 30);
+    margin-bottom: 16px;
+}
+
+.coach p {
+    width: 275px;
+    color: #818181;
+}
+
+footer {
+    background-color: #d01919;
+    text-align: center;
+    padding: 10px;
+}
+
+footer p {
+    font-size: 20px;
+}
