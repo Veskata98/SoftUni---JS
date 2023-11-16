@@ -1,3 +1,3 @@
 # SoftUni-JS
 
-All my projects and examples from SoftUni JS path
+All projects and examples from my SoftUni JS path
